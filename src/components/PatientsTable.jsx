@@ -1,6 +1,5 @@
-import patients from "../data/patients";
 
-export default function PatientsTable() {
+export default function PatientsTable({patients,onDelete,onEdit}) {
     const statusColors={
         Stable:"bg-green-100 text-green-700",
         Critical:"bg-red-100 text-red-700",
@@ -16,7 +15,10 @@ export default function PatientsTable() {
                         <th className="pb-4">Name</th>
                         <th className="pb-4">Age</th>
                         <th className="pb-4">Condition</th>
-                        <th className="pb-4">Status</th>
+                        <th className="pb-4">Status</th>                                   
+
+                        <th className="pb-4">Actions</th>
+                        
                     </tr>
                 </thead>
         <tbody>
@@ -31,7 +33,20 @@ export default function PatientsTable() {
                          className={`px-3 py-1 rounded-full text-sm font-semibold ${statusColors[patient.status]}`}>
                             {patient.status}
                         </span>
-                        </td>   
+                        </td>  
+                            <td className="space-x-2">
+                          <button
+                            onClick={()=>onEdit(patient)}
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition"
+                            >
+                                Edit
+                            </button>
+
+                         
+                            <button 
+                            onClick={()=>onDelete(patient.id)} 
+                            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg  transition ">Delete</button>
+                        </td> 
                      </tr>
             ))}
         </tbody>

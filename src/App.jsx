@@ -1,4 +1,5 @@
 import { useState } from "react";
+import patientsData from "./data/patients";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import StatCard from "./components/StatCard";
@@ -8,6 +9,8 @@ import Appointments from "./components/Appointments";
 import AddPatientModal from "./components/AddPatientModal";
 export default function App(){
   const [openModal, setOpenModal]=useState(false);
+  const [patients,setPatients]=useState(patientsData);
+  const[editingPatient,setEditingPatient]=useState(null);
   return(
     <div className="flex bg-gray-100 min-h-screen">
       <Sidebar/>
@@ -25,12 +28,36 @@ export default function App(){
 
          <div className="grid lg:grid-cols-3 gap-6 mt-8">
             <div className="lg:col-span-2">
-            <PatientsTable/>
+            <PatientsTable patients={patients}
+            onDelete={(id)=>setPatients(patients.filter((patient)=>patient.id !==id))}
+            onEdit={(patient)=>{setEditingPatient(patient);
+            setOpenModal(true); 
+            }}
+            />
           </div>
             <Appointments/>
+
             <AddPatientModal
             isOpen={openModal}
             onClose ={()=>setOpenModal(false)}
+            onSave={(patientData)=>{
+              if (editingPatient){
+                setPatients(
+                  patients.map((patient)=>
+                  patient.id===patientData.id
+                ? patientData
+                :patient
+              )
+                );
+              }else{
+                setPatients([
+                  patientData,
+                  ...patients,
+                ]);
+              }
+              setEditingPatient(null)
+            }}
+            editingPatient={editingPatient}
             />
          </div>
         </main>
