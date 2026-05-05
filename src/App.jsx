@@ -1,15 +1,18 @@
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import StatCard from "./components/StatCard";
 import stats from "./data/stats";
 import PatientsTable from "./components/PatientsTable";
 import Appointments from "./components/Appointments";
+import AddPatientModal from "./components/AddPatientModal";
 export default function App(){
+  const [openModal, setOpenModal]=useState(false);
   return(
     <div className="flex bg-gray-100 min-h-screen">
       <Sidebar/>
       <div className="flex-1">
-        <Navbar/>
+        <Navbar onAdd={()=>setOpenModal(true)}/>
         <main className="p-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat)=>(
@@ -25,6 +28,10 @@ export default function App(){
             <PatientsTable/>
           </div>
             <Appointments/>
+            <AddPatientModal
+            isOpen={openModal}
+            onClose ={()=>setOpenModal(false)}
+            />
          </div>
         </main>
       </div>
