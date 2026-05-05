@@ -14,7 +14,9 @@ A modern responsive hospital admin dashboard built with React + Tailwind CSS.
 ✅ Add New Patient Functionality  
 ✅ Edit Patient Functionality  
 ✅ Delete Patient Functionality  
-✅ Responsive Layout  
+✅ Responsive Layout 
+
+live url: https://hospital-dashboard-kappa-taupe.vercel.app/
 
 ---
 
