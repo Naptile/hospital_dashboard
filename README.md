@@ -1,16 +1,168 @@
-# React + Vite
+# Hospital Dashboard 🏥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern responsive hospital admin dashboard built with React + Tailwind CSS.
 
-Currently, two official plugins are available:
+## Live Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+✅ Responsive Sidebar Navigation  
+✅ Top Navbar  
+✅ Dashboard Stat Cards  
+✅ Recent Patients Table  
+✅ Dynamic Status Badges  
+✅ Upcoming Appointments Panel  
+✅ Add Patient Modal  
+✅ Add New Patient Functionality  
+✅ Edit Patient Functionality  
+✅ Delete Patient Functionality  
+✅ Responsive Layout  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built With
 
-## Expanding the ESLint configuration
+- React
+- Tailwind CSS
+- Vite
+- JavaScript (ES6)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## React Concepts Used
+
+- Components
+- Props
+- useState Hook
+- useEffect Hook
+- Conditional Rendering
+- Event Handling
+- Controlled Inputs
+- Form Submission
+- Array.map()
+- Array.filter()
+- Dynamic Rendering
+- CRUD Operations
+- Lifting State Up
+- Parent → Child Props
+- Child → Parent Communication
+
+---
+
+## Tailwind Concepts Used
+
+- Flexbox
+- Grid
+- Responsive Design
+- Padding / Margin
+- Rounded Corners
+- Shadow Utilities
+- Hover Effects
+- Transition Utilities
+- Fixed Positioning
+- Overlay Effects
+- Typography Utilities
+- Color Utilities
+
+---
+
+## Features Breakdown
+
+### Dashboard Stats
+- Total Patients
+- Doctors
+- Appointments
+- Revenue
+
+### Patient Management
+- Add patient
+- Edit patient
+- Delete patient
+- Status badge indicators
+
+### Appointment Section
+- Upcoming appointments
+- Doctor assignment
+- Time scheduling
+
+### UI / UX
+- Clean hospital theme
+- Responsive dashboard
+- Professional card layout
+- Modal popup forms
+
+---
+
+## Project Structure
+
+```bash
+src/
+ ├── components/
+ │    ├── Sidebar.jsx
+ │    ├── Navbar.jsx
+ │    ├── StatCard.jsx
+ │    ├── PatientsTable.jsx
+ │    ├── AppointmentCard.jsx
+ │    ├── Appointments.jsx
+ │    └── AddPatientModal.jsx
+ │
+ ├── data/
+ │    ├── stats.js
+ │    ├── patients.js
+ │    └── appointments.js
+ │
+ ├── App.jsx
+ └── index.css
+```
+
+---
+
+## Installation
+
+Clone repository:
+
+```bash
+git clone https://github.com/Naptile/hospital_dashboard.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run project:
+
+```bash
+npm run dev
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+---
+
+## Deployment
+
+Deploy easily on :contentReference[oaicite:2]{index=2}.
+
+---
+
+## Learning Outcomes
+
+This project demonstrates:
+
+- Reusable component architecture
+- State management
+- Dynamic UI rendering
+- CRUD operations
+- Responsive dashboard layouts
+- Real-world frontend patterns
+
+---
+
+## Author
+
+**Naptile Peter**  
+FUllStack Developer Journey 🚀
